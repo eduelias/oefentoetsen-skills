@@ -26,19 +26,19 @@ The formats are in that repo's `README.md` ("Writing a test", "Writing a lesson"
 2. **Follow the goals, write everything new.** You may follow a method's goals, their order and its type of exercise. Every sentence, number, story and picture in the lesson and test is your own. Do not copy exercises, word lists with their definitions, maps or illustrations from the material into anything that could be shared. If the parent wants the school's exact word list practised, keep that test in their private copy and say it must not be published.
 3. **Tag every section with a `goal`**, such as `B3D2` (blok 3, doel 2) or a short name. Results are scored per goal.
 4. **Lesson first, test second.** Set `"lesson": "lessons/<id>.html"` on the test so it stays locked until the lesson is done.
-5. **The lesson practises in the format the test asks.** If the test has the child tap words, the lesson has them tap words. A child who learned with buttons and is tested with tapping fails on the format.
+5. **The lesson practises in the format the test asks.** If the test has the child tap words, the lesson has them tap words. A child who learned with buttons and is tested with tapping fails on the format. A lesson has three kinds of exercise (typed, pick, tap), so keep most of the test in `fill`, `mc`, `tf` and `words`; practise a `match` or `tf` as pick. Open questions are the exception: the lesson cannot practise them, so the question itself says how many things to write.
 6. **Test items differ from lesson items**: same kind of mistake possible, other numbers or sentences.
 7. **Dutch conventions**: decimal comma (2,5), dot for thousands (3.000.000), `×` and `:` for multiply and divide, grades from 1 to 10.
 
 ## How to teach in the lesson
 
-- **One concrete model for the why.** Money, a measuring jug, a number line. One model per idea, used on every slide of that idea.
+- **One concrete model for the why.** Money, a measuring jug, a number line. One model per idea, used on every slide of that idea. Draw the teacher's model yourself as a simple SVG and reuse the same drawing style in the test.
 - **Let the wrong method fail.** If the child is known or likely to use a wrong rule, give an exercise where that rule produces an answer the child can see is wrong, then show the right one. Telling the rule again does not work.
 - **Fade the help**: a worked example, then one with gaps, then one alone.
 - **Feedback for the likely wrong answers.** For each exercise, work out what the common wrong methods produce and put those in `data-fb` with one sentence that names the mistake. Compute these; a feedback text that does not match its key is worse than none.
 - **Hints go from vague to exact.** `data-hint` points at the method, never at the answer. The player shows the answer itself after three tries.
 - **Explanations need both halves.** Children stop at the cause and skip the consequence. In open questions say how many things to write ("Schrijf twee dingen op: …") and give the rubric one line per point.
-- **Keep it short.** A lesson is three to five slides, about ten minutes. A test is three to six sections, fifteen to twenty-five minutes.
+- **Keep it short.** A lesson is three to five slides including the closing one, about ten minutes. A test is three to six sections, fifteen to twenty-five minutes.
 
 ## How to write the test
 
@@ -53,8 +53,9 @@ The formats are in that repo's `README.md` ("Writing a test", "Writing a lesson"
 
 1. Run `node tools/check.js <testId>`. Fix every error. Read every warning and decide; a `t` before `jij` or `je` is a real mistake unless the stem ends in t (eet jij, kom jij).
 2. **Recompute every key a second way.** Maths: a short script with exact arithmetic (fractions as fractions, decimals as decimals), not mental arithmetic. Language: apply the school's rule step by step to each item. Better still, give a fresh subagent the questions without the keys and compare.
-3. Check each `data-fb` key: enter it in the lesson and see that its feedback appears.
+3. Check each `data-fb` key: enter it in the lesson and see that its feedback appears. `tools/check.js` does not check lesson answers.
 4. Click through the lesson and the test in a browser (`python3 serve.py`, then the overview page) when you can. Say so if you could not.
+5. Remove the trial attempts you made from `results/`. On a machine that holds a child's real results, delete only the files your own run created.
 
 ## Hand over
 
