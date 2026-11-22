@@ -1,0 +1,15 @@
+{
+  "name": "oefentoetsen",
+  "owner": { "name": "Du7 Technology Services" },
+  "metadata": { "description": "Skills for practice lessons and tests in Dutch primary school.", "version": "0.1.0" },
+  "plugins": [
+    {
+      "name": "oefentoetsen-skills",
+      "source": "./",
+      "description": "Build lessons and practice tests for Dutch primary-school children from the school's own goals, and mark them the way the school does.",
+      "version": "0.1.0",
+      "license": "MIT",
+      "category": "education"
+    }
+  ]
+}

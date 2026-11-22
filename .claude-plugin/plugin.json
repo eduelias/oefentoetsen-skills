@@ -1,0 +1,9 @@
+{
+  "name": "oefentoetsen-skills",
+  "version": "0.1.0",
+  "description": "Skills for Dutch primary-school practice: build a lesson and matching test from the school's goals, and mark attempts the way the school does. Works with the oefentoetsen player.",
+  "author": { "name": "Du7 Technology Services", "url": "https://du7.dev" },
+  "repository": "https://github.com/eduelias/oefentoetsen-skills",
+  "license": "MIT",
+  "keywords": ["education", "onderwijs", "basisschool", "oefentoets", "nakijken", "dutch"]
+}
